@@ -19,8 +19,6 @@ int main()
 	nodeType<int> *Things;
 
 
-
-
-
-
+	system("pause");
 }
+	

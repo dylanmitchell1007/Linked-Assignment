@@ -13,9 +13,9 @@ int main()
 	b.info = 2;
 	a.info = 0;
 
-	c.link = &b;
-	b.link = &a;
-	a.link = nullptr;
+	c.link == &b;
+	b.link == &a;
+	a.link == nullptr;
 
 	head = &c;
 

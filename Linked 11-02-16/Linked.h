@@ -21,7 +21,7 @@ private:
 public:
 	//Default Constructor
 	//Postcondition: current = NULL
-	LinkedListIterator() {}
+	LinkedListIterator() 
 	{
 		current = NULL;
 	}
@@ -86,7 +86,8 @@ protected:
 	nodeType<T> *last;
 
 public:
-	const linkedListType < T > ? &operator= (const linkedListType<T>& otherlist);
+	
+	const linkedListType < T > &operator= (const linkedListType<T>& otherlist)
 	{
 		while (first != NULL)
 		{
@@ -100,56 +101,140 @@ public:
 
 
 
-	void intializeList();
+	void intializeList()
+	{
+		first = NULL;
+		last = NULL;
+		count = 0;
+	}
 
 
 
-	bool isEmptyList() const;
+	bool isEmptyList() const
+	{
+		if (first = NULL)
+		{
+			return true;
+		}
+		return false;
+	}
+			
 
 
 
-
-	void print() const;
-
-
-
-
-	int length() const;
-
-
-
-
-	void destroyList();
-
-
-
-
-	Type front() const;//return info
-
-
-
-
-	Type Back() const;//return info
-
-
-
-
-
-	bool search(const T& nodeInfo);
+	void print() const
+	{
+		nodeType<T> *current;
+		current = first;
+		while (current != NULL)
+		{
+			cout << current->info;
+			current = current->link;
+		}
+	}
 
 
 
 
-	void insertFirst(const T& nodeinfo);
+	int length() const
+	{
+		while (first != NULL)
+		{
+			first = first->link;
+			count++;
+		}
+		return count;
+
+	}
 
 
 
-	void insertLast(const T& nodeinfo);
+
+	void destroyList()
+	{
+		nodeType<T> *iter = first;
+		while (iter != NULL)
+		{
+			nodeType<T> *tmp = iter;
+			iter = iter->link;
+			delete tmp;
+		}
+	}
 
 
 
 
-	void deleteNode(const T& nodeinfo);
+	T front() const//return info
+	{
+		if (first != NULL)
+		{
+			return first;
+		}
+		return false;
+	}
+
+	T Back() const//return info
+	{	
+		if (first != NULL)
+		{
+			return last;
+		}
+		return false;
+
+	}
+
+
+
+
+
+	bool search(const T& nodeInfo)
+	{
+		if (first->info = nodeInfo)
+		{
+			return true
+		}
+		return false;
+	}
+
+
+
+
+	void insertFirst(const T& nodeinfo)
+	{
+		nodeType <T> *Node = first;
+		Node->info = nodeinfo;
+		Node->link = first;
+		first = Node;
+		
+			
+
+
+	}
+
+
+
+	void insertLast(const T& nodeinfo)
+	{
+		nodeType <T> *Node = last;
+		nodeType <T> tmpNode = new nodeType<T>();
+		
+		Node->info = nodeinfo;
+		Node->link = NULL;
+		last->link = Node;
+		last = Node;
+
+	}
+
+
+	//Function to delete node from the list.
+	//Postcondition: If found, the node containing the node is deleted from the list first points to
+	//the first node, last points to the last node of the update list, and count is decremented by 1
+	void deleteNode(const T& nodeinfo)
+	{
+		first->Node
+
+
+	}
 
 
 
